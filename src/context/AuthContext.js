@@ -38,7 +38,7 @@ export const AuthProvider = ({children}) => {
 		setIsLoading(true)
 		e.preventDefault()
 		
-		let response = await fetch('http://127.0.0.1:8000/users/login/', {
+		let response = await fetch('https://gamkrib-backend.up.railway.app/users/login/', {
 			method: "POST",
 
 			credentials: "include",
@@ -70,7 +70,7 @@ export const AuthProvider = ({children}) => {
 		let registerUser = async (e)=> {
 		setIsLoading(true)
 		e.preventDefault()
-		let response = await fetch('http://127.0.0.1:8000/users/register/', {
+		let response = await fetch('https://gamkrib-backend.up.railway.app/users/register/', {
 			method: 'POST',
 			headers:{
 				'Content-Type':'application/json'
@@ -109,7 +109,7 @@ export const AuthProvider = ({children}) => {
 	let registerLandlord = async (e)=> {
 		setIsLoading(true)
 		e.preventDefault()
-		let response = await fetch('http://127.0.0.1:8000/users/register/', {
+		let response = await fetch('https://gamkrib-backend.up.railway.app/users/register/', {
 			method: 'POST',
 			headers:{
 				'Content-Type':'application/json'

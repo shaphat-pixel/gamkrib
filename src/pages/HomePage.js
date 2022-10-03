@@ -27,7 +27,7 @@ const HomePage = () => {
 
 	const getListings = async () => {
         
-        const response = await fetch("http://127.0.0.1:8000/listings/",
+        const response = await fetch("https://gamkrib-backend.up.railway.app/listings/",
         {
           method: 'GET',
           credentials: "include",
@@ -50,7 +50,7 @@ const HomePage = () => {
 
       const getListingsFilter = async () => {
         
-        const response = await fetch(`http://127.0.0.1:8000/listings/?location=${location}`,
+        const response = await fetch(`https://gamkrib-backend.up.railway.app/listings/?location=${location}`,
         {
           method: 'GET',
           credentials: "include",

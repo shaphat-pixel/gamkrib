@@ -63,7 +63,7 @@ const DashboardPage = () => {
     let ListProperty = async ()=> {
       setIsSubmitting(true)
         //e.preventDefault()
-           let response =  await fetch('http://127.0.0.1:8000/listings-create/', {
+           let response =  await fetch('https://gamkrib-backend.up.railway.app/listings-create/', {
                method: "POST",
       
                credentials: "include",
@@ -130,7 +130,7 @@ const DashboardPage = () => {
        // Getting a landlord's listed properties
        const getListedProperties = async () => {
         
-        const response = await fetch(`http://127.0.0.1:8000/my-listings/${user.user.pk}`,
+        const response = await fetch(`https://gamkrib-backend.up.railway.app/my-listings/${user.user.pk}`,
         {
           method: 'GET',
           credentials: "include",
@@ -154,7 +154,7 @@ const DashboardPage = () => {
       // Getting booked properties of the landlord
        const getBookedProperties= async () => {
         
-        const response = await fetch(`http://127.0.0.1:8000/my-bookings/${user.user.pk}`,
+        const response = await fetch(`https://gamkrib-backend.up.railway.app/my-bookings/${user.user.pk}`,
         {
           method: 'GET',
           credentials: "include",
@@ -238,7 +238,7 @@ const Receipient = async () => {
  
 
  const createWithdrawal = async () => {
-  const response = await fetch(`http://127.0.0.1:8000/withdrawal/`,{
+  const response = await fetch(`https://gamkrib-backend.up.railway.app/withdrawal/`,{
     method: "POST",
     
     headers: {
@@ -298,7 +298,7 @@ const Receipient = async () => {
   /// withdrawal history
   const getWithdrawals = async () => {
    
-    const response = await fetch(`http://127.0.0.1:8000/withdrawal-list/${user.user.pk}`,{
+    const response = await fetch(`https://gamkrib-backend.up.railway.app/withdrawal-list/${user.user.pk}`,{
       method: "GET",
       
       headers:{
