@@ -1,38 +1,150 @@
-.App {
-  text-align: center;
+.image-auth  {
+  background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+  height: 300px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main{
+  margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.admin-image{
+  opacity: .8;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.table-header-fixed{
+  height: 300px;
+}
+.hey{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-flow: wrap;
+  padding: 10px;
+  margin-top: 5vh;
+  
+}
+@media (max-width: 500px) {
+  .hey {
+    flex-direction: column;
+  }
+}
+.property-card{
+ 
+  padding: 100px;
+  margin-right: 20px;
+  margin-left: 40px;
+  margin-bottom: 40px;
+  float: none;
+  position: relative;
+  background-color: whitesmoke;
+  width: 320px;
+  padding: 10px;
+  max-width: 85vw;
+  height:55vh;
+  box-shadow: 0px 18px 53px 0px rgba(0, 0, 0.3);
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
 }
 
-.App-link {
-  color: #61dafb;
+.property-image{
+  padding: 1px;
+  height:43vh;
+  border-radius: 15px;
+  margin-left: -3px;
+  box-shadow: 0px 18px 53px 0px rgb(132, 129, 129);
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.property-card span{
+  margin-left: 20px;
+  position: absolute;
+  bottom:0;
+  margin-bottom: 50px;
+  color: rgb(31, 29, 30);
+  
+}
+
+.property-card p{
+  margin-left: 20px;
+  position: absolute;
+  bottom:0;
+  margin-bottom: 30px; 
+  color: grey;
+}
+
+
+.property-card strong{
+  margin-left: 20px;
+  position: absolute;
+  bottom:0;
+  margin-bottom: 10px;
+  color: black;
+ 
+}
+
+.checkout{
+  background-color: rgba(18, 101, 241, 0.07);
+}
+
+.checkout-background{
+  background-color: #eee;
+}
+.checkout-input{
+  width: 55px;
+}
+
+.table-head{
+ 
+}
+
+
+.my-checkbox-x2 {
+  transform: scale(3);
+  margin: 40px 15px 0 0;
+}
+
+.my-checkbox {
+  transform: scale(2);
+  margin-right: 11px;
+}
+
+
+
+
+
+
+div.scrollmenu {
+  background-color: rgb(241, 234, 234);
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: rgb(175, 15, 15);
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: rgb(218, 196, 196);
+}
+
+.links{
+  text-decoration: none;
+  color: rgb(75, 71, 71);
+}
+
+
+
+.logout{
+  color: red;
+ margin-left: 200px;
 }
