@@ -8,12 +8,19 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Spinner from 'react-bootstrap/Spinner';
 
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+
 
 const DashboardPage = () => {
         //authentication
         let {user, logoutUser} = useContext(AuthContext)
+        console.log(user)
         const [isLoading, setIsLoading] = useState(false);
         const [isSubmitting, setIsSubmitting] = useState(false)
+
+        const [listed, setListed] = useState(false)
+        const [open, setOpen] = useState(true)
         const [isWithdrawing, setIsWithdrawing] = useState(false)
 
         const history = useHistory()
@@ -60,9 +67,9 @@ const DashboardPage = () => {
 
 
     // listing a property
-    let ListProperty = async ()=> {
+    let ListProperty = async (e)=> {
       setIsSubmitting(true)
-        //e.preventDefault()
+        e.preventDefault()
            let response =  await fetch('https://gamkrib-backend.up.railway.app/listings-create/', {
                method: "POST",
       
@@ -91,9 +98,10 @@ const DashboardPage = () => {
           
            let data = await response.json()
            setIsSubmitting(false)
+           setListed(true)
            
            
-           //console.log('response:', response)
+           console.log('response:', response)
            console.log(data)
            
        }
@@ -321,26 +329,37 @@ const Receipient = async () => {
   
   }
 
+  const home = ()=>{
+    history.push('/')
+  }
+
+  const remain = ()=>{
+    history.push('/dashboard')
+  }
+
+  const close = ()=>{
+    setOpen(false)
+  }
 
 
-      
+
+ 
 
       useEffect(() => {
-        
 
         getListedProperties()
         getBookedProperties()
         ListBanks()
         Receipient()
         getWithdrawals()
+
+        
         
        
       }, [])
 
 
-      const home = ()=>{
-        history.push('/')
-      }
+     
 
 
 	return (
@@ -355,7 +374,7 @@ const Receipient = async () => {
     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-    <a href="" class="nav-link">Home</a>
+    <a onClick={home}  class="nav-link">Home</a>
     </li>
     
     </ul>
@@ -379,7 +398,7 @@ const Receipient = async () => {
 
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
     
-    <a href="index3.html" class="brand-link">
+    <a onClick={home} class="brand-link">
     <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3 admin-image"/>
     <span class="brand-text font-weight-light">Gamkrib</span>
     </a>
@@ -478,6 +497,8 @@ const Receipient = async () => {
     </div>
     </div>
 
+    
+
 
     <section class="content">
     <div class="container-fluid">
@@ -535,7 +556,15 @@ const Receipient = async () => {
     <section class="col-lg-7 connectedSortable">
     
     
-    
+    {listed?
+    open?
+    <Alert onClose={close} severity="success">
+			  <AlertTitle>Yay!!</AlertTitle>
+			  Your property has been listed- <strong>Stay Safe.</strong>
+			</Alert>
+      :null
+      
+      :null}
     
     
     

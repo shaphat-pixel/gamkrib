@@ -2,6 +2,7 @@
 import React, {useContext, useState, useEffect} from 'react'
 import AuthContext from '../context/AuthContext'
 import {Link, Redirect} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import PaystackPop from '@paystack/inline-js'
 
 import Button from 'react-bootstrap/Button';
@@ -21,6 +22,9 @@ import {BsFillPeopleFill} from 'react-icons/bs'
 
 const PropertyDetailPage = (props) => {
 	let {user, logoutUser} = useContext(AuthContext)
+  const history = useHistory()
+
+  
   
     const id = props.match.params.id
 
@@ -50,9 +54,7 @@ const PropertyDetailPage = (props) => {
     
       }
 
-      useEffect(() => {
-		getPropertyDetail()
-	  }, [])
+  
 
 
 
@@ -85,15 +87,14 @@ const PropertyDetailPage = (props) => {
 
 
       // Processing payment.
-    const paywithpaystack = (e) =>{
-
-        e.preventDefault()
-        if(!user){
-          alert("You are not logged in!!!!")
-        }
-       
+    const paywithpaystack = () =>{
+      
+  
+ 
         const paystack = new PaystackPop()
+       
         paystack.newTransaction({
+          
           key:"pk_test_0019a4e3acb7a9886c8c65386a5be0619de6223e",
           amount: propertyDetail.price*100,    
           email: user.user.email,
@@ -110,9 +111,20 @@ const PropertyDetailPage = (props) => {
             alert("Transaction cancelled!")
           }
         })
+
   
        
      }
+
+     const home = ()=>{
+      history.push('/')
+    }
+
+     useEffect(() => {
+      getPropertyDetail()
+      }, [])
+
+   
   
 
 
@@ -121,7 +133,7 @@ const PropertyDetailPage = (props) => {
 
 <Navbar bg="light" expand="lg" fixed="top">
       <Container fluid>
-        <Navbar.Brand href="/">Gamkrib</Navbar.Brand>
+        <Navbar.Brand onClick={home}>Gamkrib</Navbar.Brand>
        
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -197,9 +209,9 @@ const PropertyDetailPage = (props) => {
             </div>
 
             <div class="d-flex justify-content-between align-items-center pb-1">
-              {user.user.is_landlord===true? null
+              {!user?  <p>You need to log in as a student to access this property</p>
               :
-              
+               
               <button onClick={paywithpaystack} type="button" class="btn btn-primary btn-lg">Book Now</button>
             }
               </div>

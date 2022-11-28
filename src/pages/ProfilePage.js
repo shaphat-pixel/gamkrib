@@ -7,6 +7,9 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+
 import {ImCheckboxChecked} from 'react-icons/im'
 
 
@@ -17,6 +20,10 @@ const ProfilePage = () => {
 
 
     const [show, setShow] = useState(false);
+
+    const [loadCheckin, setLoadCheckin] = useState(false)
+
+    const [open, setOpen] = useState(true);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -50,9 +57,7 @@ const ProfilePage = () => {
     
       }
 
-	  useEffect(() => {
-		getBookings()
-	  }, [])
+	 
 
 
     const setCheckedin = async () => {
@@ -72,6 +77,7 @@ const ProfilePage = () => {
       })
 
       let data = await response.json()
+      setLoadCheckin(true)
       
       
      
@@ -81,6 +87,22 @@ const ProfilePage = () => {
     const home = ()=>{
       history.push('/')
     }
+
+    const remain = ()=>{
+      history.push('/profile')
+    }
+
+    const close = () =>{
+      setOpen(false)
+    }
+
+    useEffect(() => {
+      if(user.user.is_landlord===false){
+        remain()
+      }
+      
+      getBookings()
+      }, [])
 
 
 
@@ -122,7 +144,7 @@ const ProfilePage = () => {
 
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
     
-    <a href="index3.html" class="brand-link">
+    <a onClick={home}  class="brand-link">
     <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3 admin-image"/>
     <span class="brand-text font-weight-light">Gamkrib</span>
     </a>
@@ -235,6 +257,16 @@ const ProfilePage = () => {
     </div>
     </div>
 
+    {loadCheckin?
+    open?
+    <Alert onClose={close} severity="success">
+			  <AlertTitle>Yay!!</AlertTitle>
+			  We are glad you love your new room- <strong>Stay Safe.</strong>
+			</Alert>
+      :null
+      
+      :null}
+
 
     <section class="content">
     <div class="container-fluid">
@@ -263,6 +295,7 @@ const ProfilePage = () => {
     </h3>
     
     </div>
+
     
    
     
@@ -290,31 +323,12 @@ const ProfilePage = () => {
                     <td>{booking.location}</td>
                     <td>{booking.number_of_persons}</td>
                     <td>{booking.checked_in===false? 
-                    <><> <input onClick={handleShow} type="checkbox" class="my-checkbox" value={`${booking.id}`} onChange={(e) => setBookingId(e.target.value)} /></><>
-
-
-                  <Modal show={show} onHide={handleClose}>
-                    <Modal.Header>
-                      <Modal.Title>Are you sure you wanna check in?</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      <div>
-                      <form onSubmit={setCheckedin}>
-                      <input type="submit"/>
-                      </form>
-                      </div>
-                    </Modal.Body>
+                    <>{!bookingId?<input type="checkbox" class="my-checkbox" value={`${booking.id}`} onChange={(e) => setBookingId(e.target.value)} /> : null}
+                    {bookingId? <button onClick={setCheckedin}>Confirm</button> : null}
+                      
+                    </>
                     
-                       
-                      
-                      
-                    <Button variant="variant" onClick={handleClose}>
-                        close
-                      </Button>
-                     
-                   
-                  </Modal>
-                </></> 
+                
                      :
                      <ImCheckboxChecked/>
                      }
@@ -334,10 +348,6 @@ const ProfilePage = () => {
     
     
     <section class="col-lg-5 connectedSortable">
-    
-   
-    
-    
     
     
     

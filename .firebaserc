@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "gamkrib"
-  }
+    "default": "gamkrib-29bf8",
+    "testing": "gamkrib-29bf8"
+  },
+  "targets": {},
+  "etags": {}
 }

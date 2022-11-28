@@ -2,6 +2,11 @@ import  {createContext, useState, useEffect} from 'react'
 import Cookie from "js-cookie";
 import jwt_decode from "jwt-decode"
 import {useHistory} from 'react-router-dom'
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+import Stack from '@mui/material/Stack';
+
+
 
 
 
@@ -22,11 +27,16 @@ const AuthContext = createContext()
 
 
 
+
+
 export default AuthContext
 
 
 export const AuthProvider = ({children}) => {
 	const [isLoading, setIsLoading] = useState(false);
+	const [requestReceived, setRequestReceived] = useState(false)
+	const [emailSent, setEmailSent] = useState(false)
+	const [open, setOpen] = useState(true);
 	let [authTokens, setAuthTokens] = useState(localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')):null)
 	let [user, setUser] = useState(localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')):null)
 	
@@ -95,7 +105,7 @@ export const AuthProvider = ({children}) => {
 		console.log('response:', response)
 		if (response.status === 201) {
 			
-			alert('An email verification message has been sent to your email address')
+			setEmailSent(true)
 		} else{
 			alert('Something went wrong! Check your credentials and try again')
 		}
@@ -128,9 +138,9 @@ export const AuthProvider = ({children}) => {
 		let data = await response.json()
 		setIsLoading(false)
 		console.log('response:', response)
-		if (response.status === 201) {
+		if (response.status === 400) {
 			
-			alert('We have received your registration request. We will rectify and get back to you.')
+			setRequestReceived(true)
 		} else{
 			alert('Something went wrong! Check your credentials and try again')
 		}
@@ -163,11 +173,41 @@ export const AuthProvider = ({children}) => {
 
 
 	}
+
+	const close = ()=>{
+		setOpen(false)
+	}
 	return(
 
 		<AuthContext.Provider value={contextData}>
+			<div>
+
+{isLoading ? <Alert  className='auth-alert' severity="success">
+			  <AlertTitle></AlertTitle>
+			  Please wait, <strong>We are authenticating you</strong>
+			</Alert> : <p></p>}
+			
+			{emailSent ? 
+			open?
+			
+			<Alert className='auth-alert' onClose={close} severity="success">
+			  <AlertTitle>Bravo!!</AlertTitle>
+			  You are almost done- <strong>We have sent a confirmation email to the address you entered.</strong>
+			</Alert>
+			: null
+			: null}
+			{requestReceived ? 
+			open?
+			  <Alert className='auth-alert' onClose={close} severity="success">
+			  <AlertTitle>Bravo!!</AlertTitle>
+			  We have received your registration request- <strong>We will contact you shortly for approval. Thank you.</strong>
+			</Alert>
+			: null
+			 :null}
+
+</div>
 			{children}
-			{isLoading ? <div class="loading">Loading</div> : <p></p>}
+		
 		</AuthContext.Provider>
 
 		)
