@@ -40,7 +40,11 @@ const HomePage = () => {
 	const getListings = async () => {
     
         setIsListing(true)
+<<<<<<< HEAD
         const response = await fetch("https://gamkrib-backend.up.railway.app/listings/",
+=======
+        const response = await fetch("https://web-production-e7a3.up.railway.app/listings/",
+>>>>>>> c020432 (added new backend links)
         {
           method: 'GET',
           credentials: "include",
@@ -66,7 +70,11 @@ const HomePage = () => {
       const getListingsFilter = async () => {
         setloadLocation(true)
         
+<<<<<<< HEAD
         const response = await fetch(`https://gamkrib-backend.up.railway.app/listings/?location=${location}`,
+=======
+        const response = await fetch(`https://web-production-e7a3.up.railway.app/listings/?location=${location}`,
+>>>>>>> c020432 (added new backend links)
         {
           method: 'GET',
           credentials: "include",

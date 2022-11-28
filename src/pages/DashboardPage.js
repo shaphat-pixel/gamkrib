@@ -70,7 +70,11 @@ const DashboardPage = () => {
     let ListProperty = async (e)=> {
       setIsSubmitting(true)
         e.preventDefault()
+<<<<<<< HEAD
            let response =  await fetch('https://gamkrib-backend.up.railway.app/listings-create/', {
+=======
+           let response =  await fetch('https://web-production-e7a3.up.railway.app/listings-create/', {
+>>>>>>> c020432 (added new backend links)
                method: "POST",
       
                credentials: "include",
@@ -138,7 +142,11 @@ const DashboardPage = () => {
        // Getting a landlord's listed properties
        const getListedProperties = async () => {
         
+<<<<<<< HEAD
         const response = await fetch(`https://gamkrib-backend.up.railway.app/my-listings/${user.user.pk}`,
+=======
+        const response = await fetch(`https://web-production-e7a3.up.railway.app/my-listings/${user.user.pk}`,
+>>>>>>> c020432 (added new backend links)
         {
           method: 'GET',
           credentials: "include",
@@ -162,7 +170,11 @@ const DashboardPage = () => {
       // Getting booked properties of the landlord
        const getBookedProperties= async () => {
         
+<<<<<<< HEAD
         const response = await fetch(`https://gamkrib-backend.up.railway.app/my-bookings/${user.user.pk}`,
+=======
+        const response = await fetch(`https://web-production-e7a3.up.railway.app/my-bookings/${user.user.pk}`,
+>>>>>>> c020432 (added new backend links)
         {
           method: 'GET',
           credentials: "include",
@@ -246,7 +258,11 @@ const Receipient = async () => {
  
 
  const createWithdrawal = async () => {
+<<<<<<< HEAD
   const response = await fetch(`https://gamkrib-backend.up.railway.app/withdrawal/`,{
+=======
+  const response = await fetch(`https://web-production-e7a3.up.railway.app/withdrawal/`,{
+>>>>>>> c020432 (added new backend links)
     method: "POST",
     
     headers: {
@@ -306,7 +322,11 @@ const Receipient = async () => {
   /// withdrawal history
   const getWithdrawals = async () => {
    
+<<<<<<< HEAD
     const response = await fetch(`https://gamkrib-backend.up.railway.app/withdrawal-list/${user.user.pk}`,{
+=======
+    const response = await fetch(`https://web-production-e7a3.up.railway.app/withdrawal-list/${user.user.pk}`,{
+>>>>>>> c020432 (added new backend links)
       method: "GET",
       
       headers:{
