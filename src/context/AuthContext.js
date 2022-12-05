@@ -48,11 +48,9 @@ export const AuthProvider = ({children}) => {
 		setIsLoading(true)
 		e.preventDefault()
 		
-<<<<<<< HEAD
-		let response = await fetch('https://gamkrib-backend.up.railway.app/users/login/', {
-=======
+
 		let response = await fetch('https://web-production-e7a3.up.railway.app/users/login/', {
->>>>>>> c020432 (added new backend links)
+
 			method: "POST",
 
 			credentials: "include",
@@ -84,11 +82,9 @@ export const AuthProvider = ({children}) => {
 		let registerUser = async (e)=> {
 		setIsLoading(true)
 		e.preventDefault()
-<<<<<<< HEAD
-		let response = await fetch('https://gamkrib-backend.up.railway.app/users/register/', {
-=======
+
 		let response = await fetch('https://web-production-e7a3.up.railway.app/users/register/', {
->>>>>>> c020432 (added new backend links)
+
 			method: 'POST',
 			headers:{
 				'Content-Type':'application/json'
@@ -127,11 +123,8 @@ export const AuthProvider = ({children}) => {
 	let registerLandlord = async (e)=> {
 		setIsLoading(true)
 		e.preventDefault()
-<<<<<<< HEAD
-		let response = await fetch('https://gamkrib-backend.up.railway.app/users/register/', {
-=======
+
 		let response = await fetch('https://web-production-e7a3.up.railway.app/users/register/', {
->>>>>>> c020432 (added new backend links)
 			method: 'POST',
 			headers:{
 				'Content-Type':'application/json'

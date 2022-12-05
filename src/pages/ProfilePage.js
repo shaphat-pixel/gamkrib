@@ -37,7 +37,7 @@ const ProfilePage = () => {
 
 	const getBookings = async () => {
         
-        const response = await fetch(`https://gamkrib-backend.up.railway.app/my-bookings-tenant/${user.user.pk}`,
+        const response = await fetch(`https://web-production-e7a3.up.railway.app/my-bookings-tenant/${user.user.pk}`,
         {
           method: 'GET',
           credentials: "include",
@@ -62,7 +62,7 @@ const ProfilePage = () => {
 
     const setCheckedin = async () => {
         
-      const response =  await fetch(`https://gamkrib-backend.up.railway.app/my-bookings-tenant-update/${bookingId}`,{
+      const response =  await fetch(`https://web-production-e7a3.up.railway.app/my-bookings-tenant-update/${bookingId}`,{
         method: "PUT",
         credentials: "include",
         headers: {

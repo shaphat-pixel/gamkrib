@@ -34,7 +34,7 @@ const PropertyDetailPage = (props) => {
 
     const getPropertyDetail = async () => {
         
-        const response = await fetch(`https://gamkrib-backend.up.railway.app/listings/${id}`,
+        const response = await fetch(`https://web-production-e7a3.up.railway.app/listings/${id}`,
         {
           method: 'GET',
           credentials: "include",
@@ -62,7 +62,7 @@ const PropertyDetailPage = (props) => {
 
       const bookProperty = async () => {
         
-        const response =  await fetch('https://gamkrib-backend.up.railway.app/book-create/',{
+        const response =  await fetch('https://web-production-e7a3.up.railway.app/book-create/',{
           method: "POST",
           credentials: "include",
           headers: {
