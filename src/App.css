@@ -20,7 +20,8 @@
   display: flex;
   flex-flow: wrap;
   padding: 10px;
-  margin-top: 5vh;
+  margin-top: 8vh;
+  justify-content: center;
   
 }
 @media (max-width: 500px) {
@@ -28,7 +29,7 @@
     flex-direction: column;
   }
 }
-.property-card{
+/* .property-card{
  
   padding: 100px;
   margin-right: 20px;
@@ -45,9 +46,9 @@
   border-radius: 20px;
   background-size: cover;
   background-position: center;
-}
+} */
 
-.property-image{
+/* .property-image{
   padding: 1px;
   height:43vh;
   border-radius: 15px;
@@ -58,7 +59,7 @@
   background-position: center;
   
   
-}
+} */
 
 
 .property-card span{
@@ -120,23 +121,24 @@
 
 
 div.scrollmenu {
-  background-color: rgb(241, 234, 234);
+  background-color: rgba( 153, 204,0,0.15);
   overflow: auto;
   white-space: nowrap;
-  border-radius: 20px;
+ 
 }
 
 div.scrollmenu a {
   display: inline-block;
-  color: rgb(175, 15, 15);
+  color: #99cc00;
   text-align: center;
   padding: 14px;
   text-decoration: none;
 }
 
 div.scrollmenu a:hover {
-  background-color: rgb(218, 196, 196);
+  background-color:rgba(153, 204, 0, 0.5);
   border-radius: 10px;
+  color: rgb(100, 100, 100);
 }
 
 .links{
@@ -169,9 +171,11 @@ div.scrollmenu a:hover {
 }
 
 .filter-input{
-  background-color: rgb(218, 196, 196);
-  border-radius: 10px;
-  border-color: white;
+  background-color:rgba(153, 204, 0, 01);
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  color: white
 }
 
 .auth-alert{
