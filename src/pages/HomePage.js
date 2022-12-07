@@ -20,6 +20,8 @@ import { BsFillPeopleFill } from "react-icons/bs";
 
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 
+import "../styles/HomePage.css";
+
 const HomePage = () => {
   let { user, logoutUser } = useContext(AuthContext);
 
@@ -57,6 +59,9 @@ const HomePage = () => {
   const getListingsFilter = async () => {
     setloadLocation(true);
 
+    const logo = "../asserts/images/GAMKRIB.png";
+
+    //this code fetches the changed location
     const response = await fetch(
       `https://web-production-e7a3.up.railway.app/listings/?location=${location}`,
 
@@ -69,17 +74,19 @@ const HomePage = () => {
       }
     );
     const data = await response.json();
+    console.log(data);
 
     setListings(data);
     setloadLocation(false);
 
-    console.log(data);
+    console.log(listings);
   };
 
+  //this useEffect fetches the intail location and the current location
   useEffect(() => {
     getListings();
-    //getListingsFilter()
-  }, []);
+    getListingsFilter();
+  }, [location]);
 
   const home = () => {
     history.push("/");
@@ -90,10 +97,18 @@ const HomePage = () => {
   };
 
   return (
-    <div class="wrapper">
-      <Navbar bg="light" expand="lg" fixed="top">
+    <div class="wrapper container-fluid">
+      <Navbar
+        className="navbar navbar-light"
+        // style="background-color: #e3f2fd;"
+        bg="light"
+        expand="lg"
+        fixed="top"
+      >
         <Container fluid>
-          <Navbar.Brand onClick={home}>Gamkrib</Navbar.Brand>
+          <Nav className="h1 nav-brand " onClick={home}>
+            GAMKRIB
+          </Nav>
 
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -310,7 +325,7 @@ const HomePage = () => {
           {listings &&
             listings.map((listing, index) => (
               <React.Fragment key={index}>
-                <div className="card shadow-sm p-3 mb-5 bg-body m-4 rounded relative property-card ">
+                <div className="card  p-3 mb-5 bg-body m-4 rounded relative property-card ">
                   <Link to={`/property-detail/${listing.id}`}>
                     <img
                       className="property-image card"

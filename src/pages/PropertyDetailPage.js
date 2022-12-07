@@ -38,10 +38,8 @@ const PropertyDetailPage = (props) => {
     const data = await response.json();
 
     setPropertyDetail(data);
-
-    console.log(data);
   };
-
+  console.log(propertyDetail);
   //booking a property
 
   const bookProperty = async () => {
@@ -98,7 +96,9 @@ const PropertyDetailPage = (props) => {
     <div class="wrapper">
       <Navbar bg="light" expand="lg" fixed="top">
         <Container fluid>
-          <Navbar.Brand onClick={home}>Gamkrib</Navbar.Brand>
+          <Navbar className="nav-brand h2 " onClick={home}>
+            GAMKRIB
+          </Navbar>
 
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">

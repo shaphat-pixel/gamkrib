@@ -1,3 +1,19 @@
+:root {
+  --headerfont: "Rubik Moonrocks";
+  --normalFont: "Poppins", sans-serif;
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  --box-shadow-sm: 0 0.125rem 0.25rem rgba(black, 0.075) !important;
+  --box-shadow-lg: 0 1rem 3rem rgba(black, 0.175) !important;
+  --transform: all ease-in-out 0.1s;
+}
+
+
+
+
+
+
+
+
 .image-auth  {
   background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
   height: 300px;
