@@ -1,0 +1,28 @@
+.footer {
+
+    background-color: var(--background-color);
+}
+
+.logo{
+    box-shadow: var(--box-shadow-lg);
+}
+
+
+/* this styles are for the register screen  */
+
+
+.registerImage{
+  /* height: 100vh; */
+overflow: hidden;
+}
+
+.registerContainer{
+    /* height: 100vh; */
+    /*  */
+    margin: 0;
+    padding: 0;
+}
+/* 
+.signUpContainer{
+    background-color: var(--brand-color);
+} */

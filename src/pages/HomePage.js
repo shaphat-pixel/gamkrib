@@ -21,6 +21,7 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 
 import "../styles/HomePage.css";
+import { FooterComponent } from "../components/footer/FooterComponent";
 
 const HomePage = () => {
   let { user, logoutUser } = useContext(AuthContext);
@@ -353,6 +354,7 @@ const HomePage = () => {
             ))}
         </div>
       )}
+      <FooterComponent />
     </div>
   );
 };

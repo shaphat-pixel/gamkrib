@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --headerfont: "Rubik Moonrocks";
   --normalFont: "Poppins", sans-serif;
@@ -5,14 +10,17 @@
   --box-shadow-sm: 0 0.125rem 0.25rem rgba(black, 0.075) !important;
   --box-shadow-lg: 0 1rem 3rem rgba(black, 0.175) !important;
   --transform: all ease-in-out 0.1s;
+  --background-color: rgba(153, 204, 0, 0.15) !important;
+  --brand-color: #99cc00 !important
+}     
+
+
+
+
+.mainContainer{
+  height: 100vh;
+  
 }
-
-
-
-
-
-
-
 
 .image-auth  {
   background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
@@ -20,7 +28,7 @@
 }
 
 .main{
-  margin-top: -100px;
+        
         background: hsla(0, 0%, 100%, 0.8);
         backdrop-filter: blur(30px);
 }

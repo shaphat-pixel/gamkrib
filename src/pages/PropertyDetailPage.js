@@ -1,20 +1,14 @@
 import React, { useContext, useState, useEffect } from "react";
 import AuthContext from "../context/AuthContext";
-import { Link, Redirect } from "react-router-dom";
+
 import { useHistory } from "react-router-dom";
 import PaystackPop from "@paystack/inline-js";
-
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 
 import { GoLocation } from "react-icons/go";
 
 import { ImPriceTags } from "react-icons/im";
 import { BsFillPeopleFill } from "react-icons/bs";
+import { NavbarComponent } from "../components/Navbar/NavbarComponet";
 
 const PropertyDetailPage = (props) => {
   let { user, logoutUser } = useContext(AuthContext);
@@ -84,63 +78,14 @@ const PropertyDetailPage = (props) => {
     });
   };
 
-  const home = () => {
-    history.push("/");
-  };
-
   useEffect(() => {
     getPropertyDetail();
   }, []);
 
   return (
     <div class="wrapper">
-      <Navbar bg="light" expand="lg" fixed="top">
-        <Container fluid>
-          <Navbar className="nav-brand h2 " onClick={home}>
-            GAMKRIB
-          </Navbar>
-
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
-            >
-              {user ? (
-                <>
-                  <Nav.Link>
-                    <Link className="links" to={"/profile"}>
-                      Profile
-                    </Link>
-                  </Nav.Link>
-                  <br />
-
-                  <Nav.Link>
-                    <Link className="links" onClick={logoutUser}>
-                      Logout
-                    </Link>
-                  </Nav.Link>
-                </>
-              ) : (
-                <>
-                  <Nav.Link>
-                    <Link className="links" to={"/login"}>
-                      Sign in
-                    </Link>
-                  </Nav.Link>
-                  <Nav.Link>
-                    <Link className="links" to={"/register"}>
-                      Register
-                    </Link>
-                  </Nav.Link>
-                </>
-              )}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-        <br />
-      </Navbar>
+      {/* Navbar goes here  */}
+      <NavbarComponent />
       <div class="row hey">
         <div class="col-sm ">
           <div className="property-card">
