@@ -1,12 +1,14 @@
 
 .card{
     transition: all ease-in-out 1s;
+     overflow: hidden;
 }
 
 .card:hover{
 
     transform: scale(1.1);
     transition: all ease-in-out 1s;
+    overflow: hidden;
 }
 
 .nav-brand:hover{
@@ -18,4 +20,34 @@
 .center-loader{
     height: 90vh;
     
+}
+
+.cardWidth{
+    width: 25rem;
+    padding: 2rem;
+    background-color: transparent
+}
+
+.icon{
+    width: 4rem;
+    
+    justify-content: center;
+    align-self: center;
+    padding: 0.6rem;
+    background-color: #99cc00;
+    border-radius: 50%;
+}
+
+.price{
+    background-color:var(--background-color);
+    justify-content: center;
+    align-items: center;
+    border-radius:15px 15px 0px 0px ;
+}
+
+.card-image:hover{
+     transform: scale(1.1);
+    transition: all ease-in-out 1s;
+
+
 }

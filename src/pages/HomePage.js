@@ -9,19 +9,61 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Toast from "react-bootstrap/Toast";
-
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
-
 import { GoLocation } from "react-icons/go";
-
 import { ImPriceTags } from "react-icons/im";
 import { BsFillPeopleFill } from "react-icons/bs";
-
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
-
 import "../styles/HomePage.css";
 import { FooterComponent } from "../components/footer/FooterComponent";
+import { Player } from "@lottiefiles/react-lottie-player";
+import LandingComponent from "../components/landingPage/LandingComponent";
+//aserts
+import logo from "../asserts/gamkribAsserts/WEBLOGO1.webp";
+
+/////////////////////////////////////////////////////////////////////////
+
+// a componnts of the properties
+
+export const PropertiesCardComponents = ({ listings }) => {
+  return (
+    <div className="hey container">
+      {listings &&
+        listings.map((listing, index) => (
+          <React.Fragment key={index}>
+            <div className="card   mb-5 bg-body m-4 rounded relative property-card ">
+              <Link to={`/property-detail/${listing.id}`}>
+                <img
+                  className="property-image card"
+                  src={listing.image}
+                  width="290px"
+                  height="290px"
+                  alt="Images"
+                />
+                <div className="d-flex  justify-content-around ">
+                  <span className="text-green">
+                    <GoLocation color="green" /> {listing.location}
+                  </span>
+
+                  <span>
+                    <BsFillPeopleFill /> {listing.number_of_persons} in a room
+                  </span>
+                </div>{" "}
+                <div className="price text-center text-green ">
+                  <b className="h4 ">
+                    <ImPriceTags /> GHS {listing.price}
+                  </b>
+                </div>
+              </Link>
+            </div>
+          </React.Fragment>
+        ))}
+    </div>
+  );
+};
+
+////////////////////////////////////////////////////////////////////////
 
 const HomePage = () => {
   let { user, logoutUser } = useContext(AuthContext);
@@ -53,14 +95,13 @@ const HomePage = () => {
 
     setListings(data);
     setIsListing(false);
+    //this has been break for debugging purposes
 
     //console.log(data)
   };
 
   const getListingsFilter = async () => {
     setloadLocation(true);
-
-    const logo = "../asserts/images/GAMKRIB.png";
 
     //this code fetches the changed location
     const response = await fetch(
@@ -78,12 +119,13 @@ const HomePage = () => {
     console.log(data);
 
     setListings(data);
+
     setloadLocation(false);
 
     console.log(listings);
   };
 
-  //this useEffect fetches the intail location and the current location
+  //this useEffect fetches the initail location and the current location
   useEffect(() => {
     getListings();
     getListingsFilter();
@@ -98,7 +140,7 @@ const HomePage = () => {
   };
 
   return (
-    <div class="wrapper container-fluid">
+    <div class="wrapper padding-left margin-right margin-left padding-right container-fluid">
       <Navbar
         className="navbar navbar-light"
         // style="background-color: #e3f2fd;"
@@ -108,7 +150,7 @@ const HomePage = () => {
       >
         <Container fluid>
           <Nav className="h1 nav-brand " onClick={home}>
-            GAMKRIB
+            <img src={logo} height="60" className="hover:" />
           </Nav>
 
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -310,48 +352,39 @@ const HomePage = () => {
         <br />
       </Navbar>
 
-      {loadLocation ? (
-        <Alert onClose={close} severity="success">
-          <AlertTitle>
-            Please wait... We're fetching the requested location.
-          </AlertTitle>
-        </Alert>
-      ) : null}
-      {isListing ? (
-        <div class="center-loader">
-          <ClimbingBoxLoader color="#36d7b7" /> loading properties...
+      {/* This div displays the loading alert when location is not yet in  */}
+      <div>
+        {loadLocation ? (
+          <Alert onClose={close} severity="success">
+            <AlertTitle>
+              Please wait... We're fetching the requested location.
+            </AlertTitle>
+          </Alert>
+        ) : null}
+      </div>
+
+      {!isListing ? (
+        <div class="center-loader container d-flex  flex-column justify-content-center align-items-center">
+          <div>
+            {" "}
+            <Player
+              src="https://assets5.lottiefiles.com/packages/lf20_lCTb6r.json"
+              className="player"
+              loop
+              autoplay
+              // speed={30}
+              style={{ height: "500px", width: "500px" }}
+            />
+          </div>
+
+          <div className="">
+            <strong>loading properties...</strong>{" "}
+          </div>
         </div>
       ) : (
-        <div class="hey">
-          {listings &&
-            listings.map((listing, index) => (
-              <React.Fragment key={index}>
-                <div className="card  p-3 mb-5 bg-body m-4 rounded relative property-card ">
-                  <Link to={`/property-detail/${listing.id}`}>
-                    <img
-                      className="property-image card"
-                      src={`${listing.image}`}
-                      width="290px"
-                      height="290px"
-                    />
-                    <div>
-                      {" "}
-                      <span>
-                        <GoLocation /> {listing.location}
-                      </span>
-                      <br />
-                      <span>
-                        <BsFillPeopleFill /> {listing.number_of_persons} in a
-                        room
-                      </span>
-                      <strong>
-                        <ImPriceTags /> GHS {listing.price}
-                      </strong>
-                    </div>
-                  </Link>
-                </div>
-              </React.Fragment>
-            ))}
+        <div class=" container-fluid pt-5 ">
+          <LandingComponent />
+          <PropertiesCardComponents listings={listings} />
         </div>
       )}
       <FooterComponent />

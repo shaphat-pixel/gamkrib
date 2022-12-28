@@ -15,7 +15,6 @@ const RegisterPage = () => {
       <div class="text-center container-fluid  text-white registerContainer ">
         <div className="row d-flex m-5  justify-content-center ">
           <div className="col-md-12 col-lg-8">
-            {" "}
             <img
               className="registerImage"
               src={backgroundImage}

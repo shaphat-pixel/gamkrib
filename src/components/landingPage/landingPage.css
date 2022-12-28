@@ -1,0 +1,31 @@
+.homeImage{
+
+    height: 35vh;
+}
+
+.homeImage{
+    position: absolute;
+    display: block;
+   
+   
+}
+
+.textClass{
+ display: flex;
+color: white;
+position: absolute;
+justify-content: center;
+align-items: center;
+
+width: 100%;
+top: 30vh;
+font-weight: 800;
+
+
+
+}
+
+.the-best{
+    background-color: var(--background-color);
+    
+}

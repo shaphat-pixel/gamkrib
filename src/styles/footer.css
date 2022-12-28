@@ -17,12 +17,21 @@ overflow: hidden;
 }
 
 .registerContainer{
-    /* height: 100vh; */
+     /* height: 90vh;  */
     /*  */
     margin: 0;
     padding: 0;
 }
-/* 
+
 .signUpContainer{
     background-color: var(--brand-color);
-} */
+}
+
+.sectionContainer{
+
+    width: 70%;
+}
+.input{
+    border: solid 10px;
+    border-color: var(--brand-color);
+}

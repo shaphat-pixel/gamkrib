@@ -13,11 +13,13 @@ import DashboardPage from "./pages/DashboardPage";
 import PropertyDetailPage from "./pages/PropertyDetailPage";
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "./theme/index";
+import { AboutUsComponent } from "./components/aboutUs/AboutUsComponent";
+import { QuickHelp } from "./components/help/QuickHelp";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
+      <div className="App padding-left margin-right margin-left padding-right">
         <Router>
           <AuthProvider>
             <Route component={HomePage} path="/" exact />
@@ -40,6 +42,8 @@ function App() {
               path="/landlord-register"
               exact
             />
+            <Route component={AboutUsComponent} path="/about-us" exact />
+            <Route component={QuickHelp} path="/help-section" exact />
           </AuthProvider>
         </Router>
       </div>

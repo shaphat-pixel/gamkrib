@@ -9,6 +9,9 @@ import { Link, Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import AuthContext from "../../context/AuthContext";
 
+//asserts
+import logo from "../../asserts/gamkribAsserts/WEBLOGO1.webp";
+
 export const NavbarComponent = () => {
   const home = () => {
     history.push("/");
@@ -23,7 +26,7 @@ export const NavbarComponent = () => {
       <Navbar bg="light" expand="lg" fixed="top">
         <Container fluid>
           <Navbar className="nav-brand h2 " onClick={home}>
-            GAMKRIB
+            <img src={logo} height="60" />
           </Navbar>
 
           <Navbar.Toggle aria-controls="navbarScroll" />
