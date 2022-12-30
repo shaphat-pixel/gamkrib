@@ -16,10 +16,14 @@ const LandingComponent = () => {
           <img src={landing} width="100%" className="" />
           <div className="textClass text-center row">
             <di>
-              <h1 className="display-4">
-                <strong> We help you to save Time and Money on hostels!</strong>
+              <h1 className="display-4  d-sm-none d-lg-block ">
+                <strong className="d-sm-none d-md-block">
+                  We help you to save Time and Money on hostels!{" "}
+                </strong>
               </h1>
-              <p className="h1">Find best hostel deals on GAMKRIB</p>
+              <p className="h1 d-sm-none d-md-block">
+                Find best hostel deals on GAMKRIB
+              </p>
             </di>
           </div>
         </div>

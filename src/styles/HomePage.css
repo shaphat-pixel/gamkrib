@@ -1,6 +1,9 @@
 
 .card{
     transition: all ease-in-out 1s;
+    border: solid 1px;
+    border-color: #99cc00;
+    
      overflow: hidden;
 }
 
@@ -51,3 +54,8 @@
 
 
 }
+
+  /* @media (min-width: 576px) {
+.d-sm-none {
+  display: none !important;
+}  } */

@@ -123,7 +123,7 @@ export const AboutUsComponent = () => {
                 <img class="card-img-top" src={photo4} alt="Card image cap" />
                 <div class="card-body">
                   <h5 class="card-title">Gabriel Agbobli</h5>
-                  <p class="card-text">A team Member</p>
+                  <p class="card-text">Marketing Lead</p>
                 </div>
               </div>
               <div class="card col-sm-10 col-md-4 m-2 col-lg-3">
@@ -132,28 +132,28 @@ export const AboutUsComponent = () => {
                   <h5 className="card-title text-black">
                     Michael Awuah-Koranteng
                   </h5>
-                  <p class="card-text">A team Member </p>
+                  <p class="card-text"> Operations Lead </p>
                 </div>
               </div>
-              <div class="card col-sm-10 m-2 col-md-4 col-lg-3">
+              <div class="card col-sm-10 m-2 text-center col-md-4 col-lg-3">
                 <img class="card-img-top" src={photo2} alt="Card image cap" />
-                <div class="card-body">
-                  <h5 class="card-title">Jehoshaphat Tatiglo</h5>
-                  <p class="card-text">A team Member</p>
+                <div class="card-body ">
+                  <h5 class="card-title  ">Jehoshaphat Tatiglo</h5>
+                  <p class="card-text ">CTO (Chief Technology Officer)</p>
                 </div>
               </div>
               <div class="card col-sm-10 m-2 col-md-4 col-lg-3">
                 <img class="card-img-top" src={photo3} alt="Card image cap" />
                 <div class="card-body">
                   <h5 class="card-title">Charles Kwame Aboagye</h5>
-                  <p class="card-text">A team Member</p>
+                  <p class="card-text">Product Manager</p>
                 </div>
               </div>
               <div class="card col-sm-10 m-2 col-md-4 col-lg-3">
                 <img class="card-img-top" src={photo5} alt="Card image cap" />
                 <div class="card-body">
                   <h5 class="card-title">Ebenezer Agyekum</h5>
-                  <p class="card-text">Front-end Developer</p>
+                  <p class="card-text">Developer</p>
                 </div>
               </div>
             </div>
