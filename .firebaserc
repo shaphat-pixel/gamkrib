@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "default": "gamkrib-29bf8",
+<<<<<<< HEAD
+    "testing": "gamkrib-29bf8"
+=======
+    "testing": "gamkrib-29bf8",
+    "deploying": "gamkrib-29bf8"
+>>>>>>> c020432 (added new backend links)
+  },
+  "targets": {},
+  "etags": {}
+}

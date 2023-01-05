@@ -1,0 +1,16 @@
+.backgroundImage{
+
+    background-image: url('/src/asserts/gamkribAsserts/bg.png');
+}
+
+
+.brandColor{
+    background-color: var(--background-color);
+}
+
+
+
+
+
+
+.cursor{cursor: pointer;}

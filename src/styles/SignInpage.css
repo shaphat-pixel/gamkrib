@@ -1,0 +1,47 @@
+.backImage{
+
+
+    background-image: url('../asserts/gamkribAsserts/web-login-bg-without\ filter.webp');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    background-color: var(--brand-color);
+}
+
+.boldText{
+    font-weight: 700;
+    
+}
+
+.inputStyle{
+
+    background: transparent;
+    border: solid white  2px;
+    color: black;
+    border-radius: 50px;
+    height: 50px;
+    font-weight: 700;
+    
+    
+}
+.inputStyle:focus{
+
+   
+    border: solid white  2px;
+    color: black;
+    border-radius: 50px;
+    height: 50px;
+    
+    
+}
+
+.form-control::placeholder {
+    /* modern browser */
+    color: white;
+    text-align: center;
+    font-weight: 600;
+
+}
+.btn{
+    border-radius: 50px;
+}
