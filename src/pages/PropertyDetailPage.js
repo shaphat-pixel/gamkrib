@@ -9,6 +9,8 @@ import { GoLocation } from "react-icons/go";
 import { ImPriceTags } from "react-icons/im";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { NavbarComponent } from "../components/Navbar/NavbarComponet";
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 
 import {
   DescriptionComponent,
@@ -26,6 +28,9 @@ const PropertyDetailPage = (props) => {
   const [bookings, setBookings] = useState("");
   const [bookingId, setBookingId] = useState("");
 
+  const [isLoading, setIsLoading] = useState(false);
+
+
   const getPropertyDetail = async () => {
     const response = await fetch(`https://api.gamkrib.com/listings/${id}`, {
       method: "GET",
@@ -42,6 +47,7 @@ const PropertyDetailPage = (props) => {
   //booking a property
 
   const bookProperty = async () => {
+    
     const response = await fetch("https://api.gamkrib.com/book-create/", {
       method: "POST",
       credentials: "include",
@@ -61,6 +67,7 @@ const PropertyDetailPage = (props) => {
   };
 
   const updateSlots = async () => {
+    setIsLoading(false)
     const response = await fetch(`https://api.gamkrib.com/slot-update/${id}`, {
       method: "PUT",
       credentials: "include",
@@ -72,6 +79,9 @@ const PropertyDetailPage = (props) => {
         slot: propertyDetail.slot - 1,
       }),
     });
+
+    setIsLoading(true)
+    alert("your room has been booked successfully!! visit your profile for more details.")
   };
 
   const bookAndUpdateSlot = () => {
@@ -115,9 +125,11 @@ const PropertyDetailPage = (props) => {
       <DescriptionComponent
         propertyDetail={propertyDetail}
         user={user}
-        paywithpaystack={paywithpaystack}
+        paywithpaystack={bookAndUpdateSlot}
       />
+      
       <div class="row hey">
+        
         <div class="col-sm "></div>
       </div>{" "}
       <div class="row">
@@ -125,6 +137,7 @@ const PropertyDetailPage = (props) => {
           <section class="checkout-background"></section>
         </div>
       </div>
+      
     </div>
   );
 };

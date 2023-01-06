@@ -552,7 +552,7 @@ const HomePage = () => {
 
     //this code fetches the changed location
     const response = await fetch(
-      `https://api.gamkrib.com/listings/?location=${location}`,
+      `https://api.gamkrib.com/listings/?property_type=${location}`,
 
       {
         method: "GET",
@@ -596,50 +596,12 @@ const HomePage = () => {
         fixed="top"
       >
         <Container fluid className="d-flex brand  ">
-          <Nav className="h1 nav-brand " onClick={home}>
+          <Nav className=" h1 nav-brand " onClick={home}>
             <img src={logo} height="60" className="hover:" />
           </Nav>
 
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
-            >
-              {user ? (
-                <>
-                  <Nav.Link>
-                    <Link className="links" to={"/profile"}>
-                      Profile
-                    </Link>
-                  </Nav.Link>
-                  <br />
-
-                  <Nav.Link>
-                    <Link className="links" onClick={logoutUser}>
-                      Logout
-                    </Link>
-                  </Nav.Link>
-                </>
-              ) : (
-                <>
-                  <Nav.Link>
-                    <Link className="links" to={"/login"}>
-                      Sign in
-                    </Link>
-                  </Nav.Link>
-                  <Nav.Link>
-                    <Link className="links" to={"/register"}>
-                      Register
-                    </Link>
-                  </Nav.Link>
-                </>
-              )}
-            </Nav>
-          </Navbar.Collapse>
-
-          <div class="scrollmenu .sticky disable-text-selection">
+        
+          <div class="nav-auth scrollmenu .sticky disable-text-selection">
             {user ? (
               open ? (
                 <Alert onClose={close} severity="success">
@@ -652,31 +614,35 @@ const HomePage = () => {
               ) : null
             ) : null}
 
-            {location === "KNUST" ? (
+            {location === "Hostel" ? (
               <input
                 onClick={getListingsFilter}
-                value="apply KNUST"
+                value="apply Hostel"
                 class="filter-input"
                 type="submit"
               />
             ) : (
-              <a id="KNUST" onClick={(e) => setLocation(e.target.id)}>
-                KNUST
+              <a id="Hostel" onClick={(e) => setLocation(e.target.id)}>
+                Hostel
               </a>
             )}
 
-            {location === "UG" ? (
+            {location === "Homstel" ? (
               <input
                 onClick={getListingsFilter}
-                value="apply UG"
+                value="apply Homstel"
                 class="filter-input"
                 type="submit"
               />
             ) : (
-              <a id="UG" onClick={(e) => setLocation(e.target.id)}>
-                UG
+              <a id="Homstel" onClick={(e) => setLocation(e.target.id)}>
+                Homestel
               </a>
             )}
+
+
+
+            {/* 
 
             {location === "ASHESI" ? (
               <input
@@ -794,7 +760,56 @@ const HomePage = () => {
                 KTU
               </a>
             )}
+            */}
           </div>
+          
+
+          <Navbar.Toggle aria-controls="navbarScroll" />
+
+    
+         
+
+          <Navbar.Collapse id="navbarScroll">
+            <Nav
+              className="ml-auto me-auto my-2 my-lg-0"
+              style={{ maxHeight: "100px" }}
+              navbarScroll
+            >
+
+              
+             
+              {user ? (
+                <>
+                  <Nav.Link>
+                    <Link className="links text-green" to={"/profile"}>
+                    <h4 color="green">Profile</h4>
+                    </Link>
+                  </Nav.Link>
+                  <br />
+
+                  <Nav.Link>
+                    <Link className="links text-green" onClick={logoutUser}>
+                    <h4 color="green">Log Out</h4>
+                    </Link>
+                  </Nav.Link>
+                </>
+              ) : (
+                <>
+                  <Nav.Link>
+                    <Link className="links text-green" to={"/login"}>
+                      <h4 color="green">Sign in</h4>
+                    </Link>
+                  </Nav.Link>
+                  <Nav.Link>
+                    <Link className="links text-green" to={"/register"}>
+                    <h4 color="green">Register</h4>
+                    </Link>
+                  </Nav.Link>
+                </>
+              )}
+             
+            </Nav>
+          </Navbar.Collapse>
         </Container>
 
         <br />

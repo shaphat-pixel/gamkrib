@@ -1,4 +1,14 @@
 
+.nav-auth{
+ margin-left: 40px;
+}
+
+.nav-scrol{
+ margin-right: 200;
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -171,7 +181,7 @@
 
 div.scrollmenu {
   background-color: rgba( 153, 204,0,0.15);
-  overflow: auto;
+ 
   white-space: nowrap;
  
 }

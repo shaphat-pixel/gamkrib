@@ -216,6 +216,7 @@ export const AuthProvider = ({children}) => {
 			</Alert>
 			: null
 			: null}
+			{/* 
 			{requestReceived ? 
 			open?
 			  <Alert className='auth-alert' onClose={close} severity="success">
@@ -224,6 +225,7 @@ export const AuthProvider = ({children}) => {
 			</Alert>
 			: null
 			 :null}
+			 */}
 
 </div>
 			{children}

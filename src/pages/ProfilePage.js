@@ -259,10 +259,10 @@ const ProfilePage = () => {
                                 <th>Price</th>
                                 <th>Location</th>
                                 <th>Map link</th>
-                                <th>Check in</th>
-
                                 <th>No. in room</th>
-                                <th>Check in</th>
+
+                                <th>check in</th>
+                                
                               </tr>
                             </thead>
 
@@ -272,7 +272,7 @@ const ProfilePage = () => {
                                 <td>{booking.price}</td>
                                 <td>{booking.location}</td>
 
-                                <td>{booking.map_link}</td>
+                                <td><a href = {`${booking.map_link}`}>click here</a></td>
 
                                 <td>{booking.number_of_persons}</td>
 
