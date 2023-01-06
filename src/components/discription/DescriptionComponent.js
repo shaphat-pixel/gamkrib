@@ -127,93 +127,95 @@ export const DescriptionComponent = ({
               {propertyDetail.location}
             </div>
           </div>
-
-          <div className="bg-white mb-3 shadow-sm rounded p-2">
-            <h5 className="">
-              <b className="text-green">Commuting time</b>
-            </h5>
-            {user.user.school === "UPSA"? 
-            <div className="">
-              <b className=""><b className="text-green">{propertyDetail.time_to_upsa_walk} <i>walk</i></b> from {user.user.school}</b><br/>
-              <b className=""><b className="text-green">{propertyDetail.time_to_upsa_bike} <i>ride</i></b> from {user.user.school}</b><br/>
-              <b className=""><b className="text-green">{propertyDetail.time_to_upsa_car} <i>drive</i></b> from {user.user.school}</b><br/>
-              
-            </div>
-            : null}
-
-{user.user.school === "UG"? 
-            <div className="">
-              <b className=""><b className="text-green">{propertyDetail.time_to_ug_walk} <i>walk</i></b> from {user.user.school}</b><br/>
-              <b className=""><b className="text-green">{propertyDetail.time_to_ug_bike} <i>ride</i></b> from {user.user.school}</b><br/>
-              <b className=""><b className="text-green">{propertyDetail.time_to_ug_car} <i>drive</i></b> from {user.user.school}</b><br/>
-              
-            </div>
-            : null}
-
-{user.user.school === "RADFORD"? 
-            <div className="">
-              <b className=""><b className="text-green">{propertyDetail.time_to_radford_walk} <i>walk</i></b> from {user.user.school}</b><br/>
-              <b className=""><b className="text-green">{propertyDetail.time_to_radford_bike} <i>ride</i></b> from {user.user.school}</b><br/>
-              <b className=""><b className="text-green">{propertyDetail.time_to_radford_car} <i>drive</i></b> from {user.user.school}</b><br/>
-              
-            </div>
-            : null}
-
-{user.user.school === "KNUSTFORD"? 
-            <div className="">
-              <b className=""><b className="text-green">{propertyDetail.time_to_knustford_walk} <i>walk</i></b> from {user.user.school}</b><br/>
-              <b className=""><b className="text-green">{propertyDetail.time_to_knustford_bike} <i>ride</i></b> from {user.user.school}</b><br/>
-              <b className=""><b className="text-green">{propertyDetail.time_to_knustford_car} <i>drive</i></b> from {user.user.school}</b><br/>
-              
-            </div>
-            : null}
-
-{user.user.school === "GSL"? 
-            <div className="">
-              <b className=""><b className="text-green">{propertyDetail.time_to_gsl_walk} <i>walk</i></b> from {user.user.school}</b><br/>
-              <b className=""><b className="text-green">{propertyDetail.time_to_gsl_bike} <i>ride</i></b> from {user.user.school}</b><br/>
-              <b className=""><b className="text-green">{propertyDetail.time_to_gsl_car} <i>drive</i></b> from {user.user.school}</b><br/>
-              
-            </div>
-            : null}
-
-{user.user.school === "LANCASTER"? 
-            <div className="">
-              <b className=""><b className="text-green">{propertyDetail.time_to_lancaster_walk} <i>walk</i></b> from {user.user.school}</b><br/>
-              <b className=""><b className="text-green">{propertyDetail.time_to_lancaster_bike} <i>ride</i></b> from {user.user.school}</b><br/>
-              <b className=""><b className="text-green">{propertyDetail.time_to_lancaster_car} <i>drive</i></b> from {user.user.school}</b><br/>
-              
-            </div>
-            : null}
-
-{user.user.school === "WISCONSIN"? 
-            <div className="">
-              <b className=""><b className="text-green">{propertyDetail.time_to_wisconsin_walk} <i>walk</i></b> from {user.user.school}</b><br/>
-              <b className=""><b className="text-green">{propertyDetail.time_to_wisconsin_bike} <i>ride</i></b> from {user.user.school}</b><br/>
-              <b className=""><b className="text-green">{propertyDetail.time_to_wisconsin_car} <i>drive</i></b> from {user.user.school}</b><br/>
-              
-            </div>
-            : null}
-            
-          </div>
-          <div className="bg-white mb-3 shadow-sm rounded p-2">
-            {!user ? (
-              <p className="text-danger">
-                {" "}
-                <b> You need to log in as a student to book this property</b>
-              </p>
-            ) : (
-              <button
-                onClick={paywithpaystack}
-                type="button"
-                class="btn btn-success btn"
-              >
-                Book Now
-              </button>
-            )}
-          </div>
           
+{user? 
+          <><div className="bg-white mb-3 shadow-sm rounded p-2">
+              <h5 className="">
+                <b className="text-green">Commuting time</b>
+              </h5>
+              {user.user.school === "UPSA" ?
+                <div className="">
+                  <b className=""><b className="text-green">{propertyDetail.time_to_upsa_walk} <i>walk</i></b> from {user.user.school}</b><br />
+                  <b className=""><b className="text-green">{propertyDetail.time_to_upsa_bike} <i>ride</i></b> from {user.user.school}</b><br />
+                  <b className=""><b className="text-green">{propertyDetail.time_to_upsa_car} <i>drive</i></b> from {user.user.school}</b><br />
+
+                </div>
+                : null}
+
+              {user.user.school === "UG" ?
+                <div className="">
+                  <b className=""><b className="text-green">{propertyDetail.time_to_ug_walk} <i>walk</i></b> from {user.user.school}</b><br />
+                  <b className=""><b className="text-green">{propertyDetail.time_to_ug_bike} <i>ride</i></b> from {user.user.school}</b><br />
+                  <b className=""><b className="text-green">{propertyDetail.time_to_ug_car} <i>drive</i></b> from {user.user.school}</b><br />
+
+                </div>
+                : null}
+
+              {user.user.school === "RADFORD" ?
+                <div className="">
+                  <b className=""><b className="text-green">{propertyDetail.time_to_radford_walk} <i>walk</i></b> from {user.user.school}</b><br />
+                  <b className=""><b className="text-green">{propertyDetail.time_to_radford_bike} <i>ride</i></b> from {user.user.school}</b><br />
+                  <b className=""><b className="text-green">{propertyDetail.time_to_radford_car} <i>drive</i></b> from {user.user.school}</b><br />
+
+                </div>
+                : null}
+
+              {user.user.school === "KNUSTFORD" ?
+                <div className="">
+                  <b className=""><b className="text-green">{propertyDetail.time_to_knustford_walk} <i>walk</i></b> from {user.user.school}</b><br />
+                  <b className=""><b className="text-green">{propertyDetail.time_to_knustford_bike} <i>ride</i></b> from {user.user.school}</b><br />
+                  <b className=""><b className="text-green">{propertyDetail.time_to_knustford_car} <i>drive</i></b> from {user.user.school}</b><br />
+
+                </div>
+                : null}
+
+              {user.user.school === "GSL" ?
+                <div className="">
+                  <b className=""><b className="text-green">{propertyDetail.time_to_gsl_walk} <i>walk</i></b> from {user.user.school}</b><br />
+                  <b className=""><b className="text-green">{propertyDetail.time_to_gsl_bike} <i>ride</i></b> from {user.user.school}</b><br />
+                  <b className=""><b className="text-green">{propertyDetail.time_to_gsl_car} <i>drive</i></b> from {user.user.school}</b><br />
+
+                </div>
+                : null}
+
+              {user.user.school === "LANCASTER" ?
+                <div className="">
+                  <b className=""><b className="text-green">{propertyDetail.time_to_lancaster_walk} <i>walk</i></b> from {user.user.school}</b><br />
+                  <b className=""><b className="text-green">{propertyDetail.time_to_lancaster_bike} <i>ride</i></b> from {user.user.school}</b><br />
+                  <b className=""><b className="text-green">{propertyDetail.time_to_lancaster_car} <i>drive</i></b> from {user.user.school}</b><br />
+
+                </div>
+                : null}
+
+              {user.user.school === "WISCONSIN" ?
+                <div className="">
+                  <b className=""><b className="text-green">{propertyDetail.time_to_wisconsin_walk} <i>walk</i></b> from {user.user.school}</b><br />
+                  <b className=""><b className="text-green">{propertyDetail.time_to_wisconsin_bike} <i>ride</i></b> from {user.user.school}</b><br />
+                  <b className=""><b className="text-green">{propertyDetail.time_to_wisconsin_car} <i>drive</i></b> from {user.user.school}</b><br />
+
+                </div>
+                : null}
+
+            </div><div className="bg-white mb-3 shadow-sm rounded p-2">
+                {!user ? (
+                  <p className="text-danger">
+                    {" "}
+                    <b> You need to log in as a student to book this property</b>
+                  </p>
+                ) : (
+                  <button
+                    onClick={paywithpaystack}
+                    type="button"
+                    class="btn btn-success btn"
+                  >
+                    Book Now
+                  </button>
+                )}
+              </div></>
+          
+          : null}
         </div>
+        
       </div>
       {/* 
       <div className=" container">
