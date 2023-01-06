@@ -176,7 +176,7 @@ const StudentRegisterPage = () => {
           </div>
         </div>
       </div>
-
+{/* 
       <div className="col-11 col-md-3 signUpContainer pt-5  d-flex  flex-column d-flex display-sm-6 text-white ">
         <div className="h2">
           {" "}
@@ -190,6 +190,7 @@ const StudentRegisterPage = () => {
           />
         </div>
       </div>
+    */}
     </div>
   );
 };
