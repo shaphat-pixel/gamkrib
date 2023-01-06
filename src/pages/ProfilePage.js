@@ -231,7 +231,7 @@ const ProfilePage = () => {
                   </div>
 
                   <p>
-                    &nbsp;&nbsp;Call <strong>0551911595/0240244357</strong> to
+                    &nbsp;&nbsp;Call <strong>0592854676/0245242812</strong> to
                     give you access to your booked room.
                   </p>
                   <p>
