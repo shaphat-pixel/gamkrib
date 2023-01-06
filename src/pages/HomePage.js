@@ -468,6 +468,7 @@ export const PropertiesCardComponents = ({ listings }) => {
       {listings &&
         listings.map((listing, index) => (
           <React.Fragment key={index}>
+            {listing.slot > 0 ?
             <div className="card   mb-5 bg-body m-4 rounded relative  property-card ">
               <Link to={`/property-detail/${listing.id}`}>
                 <img
@@ -504,6 +505,7 @@ export const PropertiesCardComponents = ({ listings }) => {
                 </div>
               </Link>
             </div>
+            : null}
           </React.Fragment>
         ))}
     </div>
