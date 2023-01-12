@@ -21,7 +21,7 @@ const LandingComponent = () => {
               <h1 className="display-4 d-fixed pb-4">
                 <strong className="mb-4">
                   {" "}
-                  We help you to save Time and Money on hostels!
+                  We help you to save Time and Money on hostels !
                 </strong>
               </h1>
               <p className="h1 d-lg-none d-xl-block">
