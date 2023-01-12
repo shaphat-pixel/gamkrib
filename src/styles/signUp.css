@@ -1,0 +1,58 @@
+
+
+
+.parentContainer{
+    margin-top: 0!important;
+    padding-top: 0!important;
+    
+    position: absolute;
+    width: 100vw;
+   
+    top: 0;
+     display: flex;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.headerText{
+    font-weight: 700;
+}
+
+.inputStyle{
+    background: transparent !important;
+    border: solid 1px black !important;
+    border-radius: 6px !important;
+    /* width: 20rem; */ 
+}
+
+.forSelect{
+    margin: 0 !important;
+    padding: 0 !important;
+   
+}
+
+.signUpImage{
+   
+background: linear-gradient(to top, #00000060, #0100026b), url('../asserts/signUpImages/signUp-female-assert.jpg');
+background-position: center;
+background-size: cover; 
+
+
+
+
+}
+
+@media screen {
+    
+}
+
+
+.errorMessage{
+    color: red;
+    text-align: center;padding-bottom: 1rem;
+}
+
+.mix-height{
+    background-color: aqua;
+    min-height: 20rem !important;
+}
